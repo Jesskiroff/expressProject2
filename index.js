@@ -30,8 +30,17 @@ app.get('/puppies', (req, res) => {
 });
 
 app.get('/kittens', (req, res) => {
-  try {gi
+  try {
     res.send(`<h3> kittens</h3>`);
+  } catch (err) {
+    console.error(err);
+    next(err);
+  }
+});
+
+app.get('/turtles', (req, res) => {
+  try {
+    res.send(`<h3>turtles</h3>`);
   } catch (err) {
     console.error(err);
     next(err);
